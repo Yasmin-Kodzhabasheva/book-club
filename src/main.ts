@@ -1,3 +1,5 @@
-import FormComponent from "./components/FormComponent";
+import { UI } from "./utils/utils";
 
-const formComponent = new FormComponent();
+
+UI.render('');
+
