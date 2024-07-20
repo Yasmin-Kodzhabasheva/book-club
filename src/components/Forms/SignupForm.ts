@@ -33,7 +33,7 @@ class SignupForm {
 
 
         </div>
-        <button class="sigunp-button w-2/4 rounded bg-orange-400/90 text-white">Sigunp</button>`
+        <button class="sigunp-button w-2/4 rounded bg-orange-400/90 text-white">Signup</button>`
         );
 
         const signupButton = document.querySelector(".signup-button");
