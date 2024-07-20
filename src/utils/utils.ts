@@ -2,6 +2,13 @@ import { auth } from "../firebase/firebase";
 import LandingComponent from "../components/LandingComponent";
 import HomeComponent from "../components/HomeComponent";
 
+type HTMLStructure = {
+    rootEl: string;
+    createEl: string;
+    elContent: string;
+    elClass: string;
+};
+
 class UI {
     static render(verification: string) {
         if (Auth.isAuth() || verification) {
@@ -13,22 +20,23 @@ class UI {
 }
 
 class HTMLTemplate {
-    static insertMainContent(element: string, content: string) {
-        const rootElement = document.querySelector(element)!;
+    static createStructure(params: HTMLStructure) {
+        const { rootEl, createEl, elContent, elClass } = params;
 
-        rootElement.innerHTML = content;
+        const rootElement = document.querySelector(rootEl)!;
+        const createdElement = document.createElement(createEl);
+
+        createdElement.className = elClass;
+
+        createdElement.innerHTML = elContent;
+
+        rootElement.appendChild(createdElement);
     }
 
-    static insertContent(params: {
-        insertEl: string;
-        content: string;
-        createEl: string;
-    }) {
-        const rootElement = document.querySelector(params.insertEl)!;
-        const createdEl = document.createElement(params.createEl);
+    static replaceContent(rootEl: string, elContent: string) {
+        const rootElement = document.querySelector(rootEl)!;
 
-        createdEl.innerHTML = params.content;
-        rootElement.appendChild(createdEl);
+        rootElement.innerHTML = elContent;
     }
 }
 
