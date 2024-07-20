@@ -3,11 +3,12 @@ import { HTMLTemplate } from "../utils/utils";
 class SearchComponent {
     constructor() {
         const params = {
-            insertEl: ".home-page",
-            content: `<input type="text" name="search-books" id="search-books">`,
+            rootEl: ".home-page",
             createEl: "div",
+            elContent: `<input type="text" name="search-books" id="search-books">`,
+            elClass: "",
         };
-        HTMLTemplate.insertContent(params);
+        HTMLTemplate.createStructure(params);
     }
 }
 
