@@ -3,16 +3,15 @@ import SearchComponent from "./SearchComponent";
 
 class HomeComponent {
     constructor() {
-        HTMLTemplate.insertMainContent(
+
+        HTMLTemplate.replaceContent(
             "#app",
-            `
-            <div class="home-page">
-              <h1>Find books and create your own lists</h1>
-            </div>
-            `
+            `<div class="home-page container mx-auto h-96">
+        <h1>Find books and create your own lists</h1>
+        </div>`
         );
 
-        new SearchComponent;
+        new SearchComponent();
     }
 }
 
